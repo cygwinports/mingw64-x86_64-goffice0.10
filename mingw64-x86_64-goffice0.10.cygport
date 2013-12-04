@@ -1,0 +1,19 @@
+CROSS_HOST="x86_64-w64-mingw32"
+ORIG_PN="goffice"
+inherit cross gnome2
+
+NAME="mingw64-x86_64-goffice0.10"
+VERSION=0.10.9
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GNOME office application library for Win64 toolchain"
+DESCRIPTION="A set of document-centric objects and utilities for GNOME"
+
+PATCH_URI="
+	0.10.9-vpath.patch
+	0.10.9-win32-isnan.patch
+"
+
+DIFF_EXCLUDES="*.types *-features.h"
+
+CYGCONF_ARGS="--disable-compile-warnings --with-lasem --with-config-backend=win32"

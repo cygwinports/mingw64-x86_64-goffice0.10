@@ -1,0 +1,11 @@
+--- origsrc/goffice-0.10.9/goffice/Makefile.am	2013-10-01 21:10:19.000000000 -0500
++++ src/goffice-0.10.9/goffice/Makefile.am	2013-12-03 21:43:42.186154800 -0600
+@@ -558,7 +558,7 @@ LIB_PUBLIC_HDRS = $(libgoffice_@GOFFICE_
+ 
+ 
+ goffice.def: $(ALL_HDRS) $(top_srcdir)/tools/dumpdef.pl
+-	cat $(top_builddir)/goffice/goffice-config.h $(ALL_HDRS) | \
++	cat $(top_builddir)/goffice/goffice-config.h $(addprefix $(srcdir)/,$(ALL_HDRS)) | \
+ 	sed -e 's/^#[ 	]*include[ 	]\+.*$$//g' | \
+ 	$(CPP) $(AM_CPPFLAGS) "-DGO_VAR_DECL=__declspec(dllexport)" -P - > xgen-localdef.1
+ 	@PERL@ $(top_srcdir)/tools/dumpdef.pl \

@@ -1,0 +1,14 @@
+--- origsrc/goffice-0.10.9/goffice/math/go-math.h	2012-03-18 19:45:17.000000000 -0500
++++ src/goffice-0.10.9/goffice/math/go-math.h	2013-12-03 22:24:08.017904400 -0600
+@@ -97,8 +97,10 @@ long double modfl (long double x, long d
+ 
+ #endif
+ 
+-#ifdef _MSC_VER
++#ifdef _WIN32
++#undef isnan
+ #define isnan _isnan
++#define isnanl __isnanl
+ #endif
+ 
+ /* ------------------------------------------------------------------------- */
