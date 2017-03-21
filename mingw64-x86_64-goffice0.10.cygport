@@ -3,7 +3,7 @@ ORIG_PN="goffice"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-goffice0.10"
-VERSION=0.10.31
+VERSION=0.10.33
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GNOME office application library for Win64 toolchain"
